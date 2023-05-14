@@ -1,0 +1,31 @@
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #000000 !important;
+   }
+
+/* label underline focus color */
+   .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #ffc400 !important;
+    box-shadow: 0 1px 0 0 #ffc400 !important;
+   }
+
+
+   .input-field .prefix.active {
+    color: #ffc400 !important;
+  }
+
+  .fade-in-image { animation: fadeIn 1s; }
+  @keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }
+ 
+
+ 
+
+ figure {
+	width: 100%;
+	overflow: hidden;
+}
+
+
