@@ -11,15 +11,18 @@ import {useState, useEffect} from 'react';
 
 function App() {
   const [searchState, setSearchState] = useState("unfocused"); // unfocused, searching, focused
+  const [data, setData] = useState({pregunta: "pregunta", 
+                                    respuesta:"respuesta",
+                                     url_imagen: "test_image.jpeg"}); // unfocused, searching, focused
 
   return (
     <div className="">
       <header className="">
-        <SearchBar setSearchState={setSearchState}/>
+        <SearchBar setSearchState={setSearchState} setData={setData}/>
         {
           searchState === "unfocused" 
           ?
-          <ShowContent/>
+          <ShowContent data={data}/>
           : searchState === "searching"
           ? <ShowSearching/>
           : searchState === "focused"

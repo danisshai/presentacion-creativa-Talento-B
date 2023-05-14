@@ -12,14 +12,27 @@ import React, { Component, useState, useEffect} from 'react';
 
 
 function SearchBar(props) {
-    // const [focused, setFocused] = useState(false)
-    const onFocus = () => props.setSearchState("searching") // focused
-    const onBlur = () => props.setSearchState("unfocused")
+    const [loading, setLoading] = useState(false)
+    const onFocus = () => props.setSearchState("focused") // focused , searching
+    const onBlur = () => {
+        if(!loading){props.setSearchState("unfocused")}
+    }
     const handleKeyPress = (event)=> {
         if(event.key === 'Enter'){
             // simulate searching api call
+            setLoading(true);
+            props.setSearchState("searching")
             setTimeout(() => { 
-                console.log("hello again!"); 
+                // props.setSearchState("searching");
+                
+                const searchSuccess = true;
+                if(searchSuccess){
+                    props.setData({"pregunta": event.target.value, "respuesta": `Respuesta a  ${event.target.value}!`, "url_imagen": "test_image.jpeg"})
+                }else{
+                    props.setData({"pregunta": "Ocurrio un error por favor intenta de nuevo", "respuesta": "Si el error persiste comunicate con dsandovalai@gmail.com", "url_imagen": ""})
+                }
+                setLoading(false);
+                props.setSearchState("unfocused");
             }, 2000);
             console.log('enter press here! ')
         }
@@ -29,11 +42,15 @@ function SearchBar(props) {
             <div className="row">
                 <div className="col s12">
                     <div className="row">
+                        {!loading?
                         <div className="input-field col s12">
                             <i className="material-icons prefix">search</i>
                             <input onKeyDown={handleKeyPress} onFocus={onFocus} onBlur={onBlur} type="text" id="autocomplete-input" className="autocomplete" />
                             <label for="autocomplete-input">search the best</label>
-                        </div>
+                        </div>:
+                        <h6 className="center-align" >Buscando ...</h6>
+                        }
+                        
                     </div>
                 </div>
             </div>

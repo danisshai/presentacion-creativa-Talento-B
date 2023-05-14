@@ -25,11 +25,11 @@ function ShowContent(props) {
     return (
         <div className="row fade-in-image">
             <div className="col s12 m6 " >
-              <img src={"test_image.jpeg"} className="animate-image" alt="imagen"  style={{width:"100%"}}/>
+              <img src={props.data.url_imagen} className="animate-image" alt="imagen"  style={{width:"100%"}}/>
             </div>
             <div className="col s12 m6 " style={{background: color}} >
-              <h5 style={{fontWeight : "900"}}>Presentación Frontend</h5 >
-              <p> <strong> Presentación Frontend</strong></p>
+              <h5 style={{fontWeight : "900"}}>{props.data.pregunta}</h5 >
+              <p> <strong> {props.data.respuesta}</strong></p>
             </div>
           </div>
     );

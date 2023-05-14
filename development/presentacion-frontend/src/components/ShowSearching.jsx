@@ -27,11 +27,11 @@ function ShowSearching(props) {
     
     // useEffect onBlur
     return (
-        <div className="container valign center">
+        <div className="container valign center" >
             <img src="loading.gif" alt="Loading"  style={{width:"100%", maxWidth: "300px"}}/>
           
-            <h4>Dato Curioso: </h4>
-            <p> Cuando estaba en septimo grado del colegio participe en una competencia de google llamada Google Code-In</p>
+            <h4 style={{fontWeight:"800"}}>Dato Curioso: </h4>
+            <p style={{fontWeight:"600"}}>  Cuando estaba en septimo grado del colegio participe en una competencia de google llamada Google Code-In</p>
         </div>
     );
 }
