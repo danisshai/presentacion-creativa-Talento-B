@@ -14,7 +14,7 @@ function App() {
   
 
   const [searchState, setSearchState] = useState("unfocused"); // unfocused, searching, focused
-  const [data, setData] = useState({pregunta: "Bienvenid@ - Realiza tu pregunta para mí en la bara de busqueda y presiona enter", 
+  const [data, setData] = useState({pregunta: "Bienvenid@ - Realiza tu pregunta para mí en la barra de busqueda y presiona enter", 
                                     respuesta:"Por medio inteligencia artificial intentaré responder de la mejor manera a tus preguntas. Tengo información sobre mi familia, mis gustos, mi infancia, mis metas, proyeccion profesional en Bancolombia y más.",
                                      url_imagen: "imagenInicial.jpeg"}); // unfocused, searching, focused
 
@@ -22,10 +22,10 @@ function App() {
     <div className="">
       <header className="">
         <SearchBar setSearchState={setSearchState} setData={setData}/>
+        
         {
           searchState === "unfocused" 
-          ?
-          <ShowContent data={data}/>
+          ? <ShowContent data={data}/>
           : searchState === "searching"
           ? <ShowSearching/>
           : searchState === "focused"

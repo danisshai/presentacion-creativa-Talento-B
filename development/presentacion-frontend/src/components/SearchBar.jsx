@@ -47,6 +47,7 @@ function SearchBar(props) {
                             <i className="material-icons prefix">search</i>
                             <input autocomplete="off" onKeyDown={handleKeyPress} onFocus={onFocus} onBlur={onBlur} type="text" id="autocomplete-input" className="autocomplete" />
                             <label for="autocomplete-input">search the best</label>
+                            <span > <a href="https://raw.githubusercontent.com/danisshai/presentacion-creativa-Talento-B/main/development/preguntas_sugeridas.pdf" target="_blank">Ejemplos (Capturas de pantalla) de respuesta a preguntas sugeridas</a> </span>
                         </div>:
                         <h6 className="center-align" >Buscando ...</h6>
                         }

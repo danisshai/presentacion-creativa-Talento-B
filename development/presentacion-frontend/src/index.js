@@ -9,6 +9,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import "./general_styles.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // "homepage": "https://danisshai.github.io/presentacion-creativa-Talento-B",
   <React.StrictMode>
     <App />
   </React.StrictMode>
