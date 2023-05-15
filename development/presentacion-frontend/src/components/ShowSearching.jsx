@@ -44,7 +44,7 @@ function ShowSearching(props) {
     // useEffect onBlur
     return (
         <div className="container valign center" >
-            <img src="loading.gif" alt="Loading"  style={{width:"100%", maxWidth: "300px"}}/>
+            <img src="https://raw.githubusercontent.com/danisshai/DummyPortfolio/main/loading.gif" alt="Loading"  style={{width:"100%", maxWidth: "300px"}}/>
           
             <h4 style={{fontWeight:"800"}}>Dato Curioso: </h4>
             <p style={{fontWeight:"600"}}> {dato} </p>
