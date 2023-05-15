@@ -22,18 +22,18 @@ function SearchBar(props) {
             // simulate searching api call
             setLoading(true);
             props.setSearchState("searching")
-            setTimeout(() => { 
-                // props.setSearchState("searching");
-                
-                const searchSuccess = true;
-                if(searchSuccess){
-                    props.setData({"pregunta": event.target.value, "respuesta": `Respuesta a  ${event.target.value}!`, "url_imagen": "test_image.jpeg"})
-                }else{
+            const url = 'https://us-south.functions.appdomain.cloud/api/v1/web/e5f49dfa-6fd2-4847-81d9-7b2005be3699/default/presentacion_creativa_talento_B?texto='+event.target.value
+            fetch(url)
+                .then(response => response.json())
+                .then(jsonData => {
+                    props.setData({"pregunta": event.target.value, "respuesta": jsonData.respuesta, "url_imagen": jsonData.image})
+                    setLoading(false);
+                    props.setSearchState("unfocused");
+                }).catch(error => {console.error(error);
                     props.setData({"pregunta": "Ocurrio un error por favor intenta de nuevo", "respuesta": "Si el error persiste comunicate con dsandovalai@gmail.com", "url_imagen": ""})
-                }
-                setLoading(false);
-                props.setSearchState("unfocused");
-            }, 2000);
+                    setLoading(false);
+                });
+           
             console.log('enter press here! ')
         }
     }
@@ -45,7 +45,7 @@ function SearchBar(props) {
                         {!loading?
                         <div className="input-field col s12">
                             <i className="material-icons prefix">search</i>
-                            <input onKeyDown={handleKeyPress} onFocus={onFocus} onBlur={onBlur} type="text" id="autocomplete-input" className="autocomplete" />
+                            <input autocomplete="off" onKeyDown={handleKeyPress} onFocus={onFocus} onBlur={onBlur} type="text" id="autocomplete-input" className="autocomplete" />
                             <label for="autocomplete-input">search the best</label>
                         </div>:
                         <h6 className="center-align" >Buscando ...</h6>

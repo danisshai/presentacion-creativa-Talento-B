@@ -28,7 +28,13 @@ function ShowSearchFocus(props) {
     // useEffect onBlur
     return (
         <div className="container" >
-            <h6> <strong> Perguntame algo que te interese:</strong></h6>
+            <h6> <strong> Realiza tu pregunta para mí en la bara de busqueda y presiona enter </strong></h6>
+            <p>  Por medio inteligencia artificial intentaré responder de la mejor manera a tus preguntas sobre mí. Tengo información sobre mi familia, mis gustos, mi infancia, mis metas, proyeccion profesional en Bancolombia y más. </p>
+            <ul>
+                <li> -  ¿Cuéntanos quienes conforman tu familia y qué es lo que más te gusta de ella? </li>
+                <li> -  ¿Qué te motivó a postularte a Talento B?  </li>
+                <li> -  ¿Cual es tu proyección profesional dentro de la organización (¿qué cargos te gustaría desempeñar en un futuro?)  </li>
+            </ul>
         </div>
     );
 }
